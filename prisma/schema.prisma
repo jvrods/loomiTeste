@@ -26,8 +26,6 @@ model Cliente {
   telefone     String
   endereco     String
 
-
-
   @@map("cliente")
   Pedido Pedido[]
 }
@@ -39,8 +37,6 @@ model Produto {
   codigo          Int
   caracteristicas String
   imagem          String
-
-
 
   @@map("produto")
   Pedido Pedido[]
