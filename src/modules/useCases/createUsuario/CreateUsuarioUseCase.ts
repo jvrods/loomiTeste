@@ -10,17 +10,18 @@ export class CreateUsuarioUseCase {
 
     async execute({ email, senha }: ICreateUsuario) {
 
-        const userExist = await prisma.usuario.findFirst({
+        const usuarioExiste = await prisma.usuario.findFirst({
             where: {
-                email: {
-                    mode: "insensitive"
-                }
+                email: email
             }
         })
+        
+        console.log(usuarioExiste)
 
-        if (userExist) {
+        if (usuarioExiste) {
             throw new Error("Usuário existe")
         }
+
 
         const hashSenha = await hash(senha, 10);
 
@@ -31,6 +32,17 @@ export class CreateUsuarioUseCase {
             },
         });
 
-        return usuario;
+        const novoUsuario = await prisma.usuario.findFirst({
+            where: {
+                email:email
+            },
+            select : {
+                id : true,
+                email: true,
+                senha : false
+            }
+        })
+
+        return novoUsuario;
     }
 }
