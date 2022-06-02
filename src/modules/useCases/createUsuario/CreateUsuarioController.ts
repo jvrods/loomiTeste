@@ -13,6 +13,7 @@ export class CreateUsuarioController {
             senha
         });
 
-        return response.json(result);
+        //return response.json(result);
+        return response.status(201).send({usuario:result})
     }
 }
