@@ -16,7 +16,6 @@ export class CreateUsuarioUseCase {
             }
         })
         
-        console.log(usuarioExiste)
 
         if (usuarioExiste) {
             throw new Error("Usuário existe")
