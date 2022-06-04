@@ -1,14 +1,12 @@
+import { IUsuario } from './../../../../../interfaces/ICreateUser';
 import { prisma } from "../../../../../database/prismaClient"
 import { sign } from "jsonwebtoken"
 import { compare } from "bcrypt";
+import "dotenv/config"
 
-interface IAutheticateUsuario {
-    email: string;
-    senha: string;
-}
 
 export class AuthenticateUsuarioUseCase {
-    async execute({ email, senha }: IAutheticateUsuario) {
+    async execute({ email, senha }: IUsuario) {
 
         const usuario = await prisma.usuario.findFirst({
             where: {
@@ -26,13 +24,12 @@ export class AuthenticateUsuarioUseCase {
             throw new Error("Email ou senha invalida!")
         }
 
-        const token = sign({ email }, "e8d95a51f3af4a3b134bf6bb680a213a", {
+        const token = sign({ email }, `${process.env.SECRET_KEY}`, {
             subject: email,
             expiresIn: "1d",
         });
 
         return token
-
 
     }
 }

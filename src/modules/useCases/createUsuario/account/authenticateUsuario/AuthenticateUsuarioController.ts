@@ -13,6 +13,7 @@ export class AuthenticateUsuarioController {
             senha,
         });
 
-        return response.json(result);
+        return response.status(200).send({ message: `usuário ${email} logado`, token: result })
+
     }
 }
