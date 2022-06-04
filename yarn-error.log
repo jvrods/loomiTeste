@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\joaor\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add express-async-errors
+  C:\Program Files\nodejs\node.exe C:\Users\joaor\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js init
 
 PATH: 
   C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Azure Data Studio\bin;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\TortoiseSVN\bin;C:\Users\joaor\AppData\Local\Microsoft\WindowsApps;C:\Users\joaor\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\joaor\AppData\Roaming\npm;C:\Users\joaor\AppData\Local\GitHubDesktop\bin
@@ -14,11 +14,21 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\joaor\OneDrive\loomiDesafio\node_modules\@prisma\engines\query_engine-windows.dll.node'
+  Error: canceled
+      at Interface.<anonymous> (C:\Users\joaor\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:137143:13)
+      at Interface.emit (node:events:520:28)
+      at Interface._ttyWrite (node:readline:1081:16)
+      at ReadStream.onkeypress (node:readline:288:10)
+      at ReadStream.emit (node:events:520:28)
+      at emitKeys (node:internal/readline/utils:358:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (node:internal/readline/emitKeypressEvents:61:36)
+      at ReadStream.emit (node:events:520:28)
+      at addChunk (node:internal/streams/readable:315:12)
 
 npm manifest: 
   {
-    "name": "loomiDesafio",
+    "name": "loomidesafio",
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
@@ -37,7 +47,10 @@ npm manifest:
       "@prisma/client": "^3.14.0",
       "@types/node": "^17.0.38",
       "bcrypt": "^5.0.1",
+      "dotenv": "^16.0.1",
+      "env": "^0.0.2",
       "express": "^4.18.1",
+      "express-async-errors": "^3.1.1",
       "jsonwebtoken": "^8.5.1"
     }
   }
@@ -454,6 +467,11 @@ Lockfile:
     "resolved" "https://registry.npmjs.org/diff/-/diff-4.0.2.tgz"
     "version" "4.0.2"
   
+  "dotenv@^16.0.1":
+    "integrity" "sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ=="
+    "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-16.0.1.tgz"
+    "version" "16.0.1"
+  
   "dynamic-dedupe@^0.3.0":
     "integrity" "sha512-ssuANeD+z97meYOqd50e04Ze5qp4bPqo8cCkI4TRjZkzAUgIDTrXV1R8QCdINpiI+hw14+rYazvTRdQrz0/rFQ=="
     "resolved" "https://registry.npmjs.org/dynamic-dedupe/-/dynamic-dedupe-0.3.0.tgz"
@@ -483,6 +501,11 @@ Lockfile:
     "resolved" "https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.2.tgz"
     "version" "1.0.2"
   
+  "env@^0.0.2":
+    "integrity" "sha512-yP8LfjO4ughSHD/3HgLPinWzexmaOGvRfs2TFx0SZhOm7j1xPi9evjuGcLiNVHIGLmcsgMak4eDbBzlYqGIVxw=="
+    "resolved" "https://registry.npmjs.org/env/-/env-0.0.2.tgz"
+    "version" "0.0.2"
+  
   "escape-html@~1.0.3":
     "integrity" "sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow=="
     "resolved" "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz"
@@ -493,7 +516,12 @@ Lockfile:
     "resolved" "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz"
     "version" "1.8.1"
   
-  "express@^4.18.1":
+  "express-async-errors@^3.1.1":
+    "integrity" "sha512-h6aK1da4tpqWSbyCa3FxB/V6Ehd4EEB15zyQq9qe75OZBp0krinNKuH4rAY+S/U/2I36vdLAUFSjQJ+TFmODng=="
+    "resolved" "https://registry.npmjs.org/express-async-errors/-/express-async-errors-3.1.1.tgz"
+    "version" "3.1.1"
+  
+  "express@^4.16.2", "express@^4.18.1":
     "integrity" "sha512-zZBcOX9TfehHQhtupq57OF8lFZ3UZi08Y97dwFCkD8p9d/d2Y3M+ykKcwaMDEL+4qyUolgBDX6AblpR3fL212Q=="
     "resolved" "https://registry.npmjs.org/express/-/express-4.18.1.tgz"
     "version" "4.18.1"
