@@ -1,3 +1,4 @@
+import { findAllUsuarioController } from './../modules/useCases/createUsuario/findMany/findManyUsuarioController';
 import { AuthenticateUsuarioController } from '../modules/useCases/createUsuario/account/authenticateUsuario/AuthenticateUsuarioController';
 import { Router } from "express";
 import { CreateUsuarioController } from '../modules/useCases/createUsuario/CreateUsuarioController';
@@ -13,6 +14,10 @@ const authenticateUsuarioController = new AuthenticateUsuarioController();
 const authenticateClientController = new AuthenticateClientController();
 
 const createClientController = new CreateClientController();
+
+const FindAllUsuarioController = new findAllUsuarioController();
+
+routes.get ("/listAll", FindAllUsuarioController.handle);
 
 routes.post("/client/",createClientController.handle);
 
